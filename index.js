@@ -7,7 +7,8 @@ var _ = require('underscore')._;
 
 var contacts = [
 	{contact_name: "yohan", phone: "0033669143036"},
-	{contact_name: "pa", phone: "0033606551967"}
+	{contact_name: "pa", phone: "0033606551967"},
+	{contact_name: "simon", phone: "0033603714466"}
 ];
 
 
