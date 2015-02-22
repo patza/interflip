@@ -51,7 +51,8 @@ app.get('/interflip', function(req, res) {
 		
 	}	
 	
-	res.statusCode(200);
+	res.statusCode = 200;
+	res.send("OK");
 });
 
 app.listen(app.get('port'), function() {
