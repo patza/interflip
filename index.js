@@ -46,13 +46,12 @@ app.get('/interflip', function(req, res) {
 	
 		https.get(url, function(res_nexmo) {
 			res_nexmo.on('data', function(chunk) {
-				console.log(chunk);
-				res.send("OK");
 			});
 		});
 		
 	}	
 	
+	res.statusCode(200);
 });
 
 app.listen(app.get('port'), function() {
