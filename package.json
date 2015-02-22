@@ -1,13 +1,14 @@
 {
   "name": "interflip-node",
   "version": "0.1.2",
-  "description": "Inteflip",
+  "description": "Interflip",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "~4.9.x"
+    "express": "~4.9.x",
+    "underscore":"1.8.2"
   },
   "engines": {
     "node": "0.10.x"
