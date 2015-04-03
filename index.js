@@ -1,9 +1,50 @@
+// http://code.tutsplus.com/tutorials/build-a-complete-mvc-website-with-expressjs--net-34168
 var express = require('express');
 var app = express();
 var https = require('https');
 var querystring = require('querystring');
 var _ = require('underscore')._;
 var moment = require('moment');
+var AWS = require('aws-sdk');
+
+AWS.config.region = 'eu-west-1';
+
+var db = new AWS.DynamoDB();
+// db.listTables(function(err, data) {
+//   console.log(data.TableNames);
+// });
+
+
+
+var tableName = "contacts";
+
+// var contactItem = {
+// 	'id': {"N" : "3"},
+// 	'contactName' : {"S" : "Andre"},
+// 	'contactPhone' : {"S" : "0606551967"}
+// }
+
+// PUT ITEM
+// db.putItem({
+// 	"TableName": tableName,
+// 	"Item":contactItem
+// }, function(err, data) {
+// 	console.log(err);
+// 	console.log(data);
+// });
+
+// GET ITEM
+// db.getItem({
+// 	"TableName": tableName,
+// 	"Key": {
+// 		"id" : {"N" : "1"}
+// 	}
+// }, function(err, data) {
+// 	console.log(err);
+// 	console.log(data);
+// })
+
+// GET ALL ITEM
 
 var contacts = [
 	{contact_name: "yohan", phone: "0033669143036"},
@@ -13,7 +54,16 @@ var contacts = [
 	{contact_name: "xav", phone: "0033618168434"},
 	{contact_name: "delarue", phone: "0033667320514"},
 	{contact_name: "coralie", phone: "0033689997061"},
-	{contact_name: "renato", phone: "0033688350778"}
+	{contact_name: "renato", phone: "0033688350778"},
+	{contact_name: "lisanne", phone: "0033646082713"},
+	{contact_name: "elodie", phone: "0033681750929"},
+	{contact_name: "thyda", phone: "0033695195156"},
+	{contact_name: "harmo", phone: "0033672983291"},
+	{contact_name: "smady", phone: "0033625790562"},
+	{contact_name: "majos", phone: "0033619419525"},
+	{contact_name: "victoria", phone: "0033643094264"},
+	{contact_name: "majospere", phone: "0033614958146"}
+
 ];
 
 var timetables = {
@@ -92,19 +142,19 @@ app.get('/interflip', function(req, res) {
 			sms.text = "sorry, no timetable"
 		}
 
-		console.log(sms);
+		// console.log(sms);
 
-		url = nexmo.host + nexmo.path + 'api_key=' + nexmo.key + '&api_secret=' + nexmo.secret + '&from=' + sms.from + "&to=" + sms.to + "&text=" + sms.text;
-		https.get(url, function(res_nexmo) {
-			res_nexmo.on('data', function(chunk) {
-			});
-		});
+		// url = nexmo.host + nexmo.path + 'api_key=' + nexmo.key + '&api_secret=' + nexmo.secret + '&from=' + sms.from + "&to=" + sms.to + "&text=" + sms.text;
+		// https.get(url, function(res_nexmo) {
+		// 	res_nexmo.on('data', function(chunk) {
+		// 	});
+		// });
 		
 
 	}
 	
 	if (/joke:/.exec(parameters.text)) {
-		joke_capture_regex = /joke:([a-z]+):([a-z]+):([a-zA-Z0-9]+)/;
+		joke_capture_regex = /joke:([a-zA-Z ]+):([a-zA-Z 0-9]+):([a-zA-Z0-9 !,'"é:?.%]+)/;
 		joke = joke_capture_regex.exec(parameters.text);
 		var joke = {
 			contact_name: joke[1],

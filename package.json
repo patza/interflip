@@ -8,8 +8,8 @@
   },
   "dependencies": {
     "express": "~4.9.x",
-    "underscore":"1.8.2",
-    "moment":"2.9.0"
+    "underscore": "1.8.2",
+    "moment": "2.9.0"
   },
   "engines": {
     "node": "0.10.x"
@@ -23,5 +23,12 @@
     "heroku",
     "express"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jasmine": "^2.2.1",
+    "jasmine-core": "^2.2.0",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-jasmine": "^0.3.5"
+  }
 }
