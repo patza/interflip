@@ -62,7 +62,8 @@ var contacts = [
 	{contact_name: "smady", phone: "0033625790562"},
 	{contact_name: "majos", phone: "0033619419525"},
 	{contact_name: "victoria", phone: "0033643094264"},
-	{contact_name: "majospere", phone: "0033614958146"}
+	{contact_name: "majospere", phone: "0033614958146"},
+	{contact_name: "etienne", phone: "0033634255359"}
 
 ];
 
