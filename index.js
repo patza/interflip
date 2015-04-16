@@ -155,7 +155,8 @@ app.get('/interflip', function(req, res) {
 	}
 	
 	if (/joke:/.exec(parameters.text)) {
-		joke_capture_regex = /joke:([a-zA-Z ]+):([a-zA-Z 0-9]+):([a-zA-Z0-9 !,'"é:?.%]+)/;
+		// [a-zA-Z0-9 !,'"é:?.%]+
+		joke_capture_regex = /joke:([a-zA-Z ]+):([a-zA-Z 0-9]+):(.+)/;
 		joke = joke_capture_regex.exec(parameters.text);
 		var joke = {
 			contact_name: joke[1],
