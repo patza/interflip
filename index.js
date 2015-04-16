@@ -161,10 +161,8 @@ app.get('/interflip', function(req, res) {
 		var joke = {
 			contact_name: joke[1],
 			fake_name: joke[2],
-			text: joke[3]
+			text: encodeURIComponent(joke[3])
 		}
-
-
 		contact = _.find(contacts, function(obj) { return obj.contact_name == joke.contact_name })
 		
 		url = nexmo.host + nexmo.path + 'api_key=' + nexmo.key + '&api_secret=' + nexmo.secret + '&from=' + joke.fake_name + "&to=" + contact.phone + "&text=" + joke.text;
