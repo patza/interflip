@@ -8,9 +8,7 @@ var nexmo = {
 }
 
 exports.send = function(from, to, text) {
-
 	url = nexmo.host + nexmo.path + 'api_key=' + nexmo.key + '&api_secret=' + nexmo.secret + '&from=' + from + "&to=" + to + "&text=" + text;
-	console.log(url);
 	https.get(url, function(res_nexmo) {
 		res_nexmo.on('data', function(chunk) {
 		

@@ -5,7 +5,7 @@ Nexmo = require('./nexmo.js');
 var excluded_fake_names = ["SFR", "dieu"];
 
 exports.new = function(joke) {
-	joke_capture_regex = /joke ([a-z]+):(.+):(.+)/;
+	joke_capture_regex = /.+ ([a-z]+):(.+):(.+)/;
 
 	joke = joke_capture_regex.exec(joke.text);
 	
