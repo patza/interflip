@@ -8,7 +8,8 @@ app.use(express.static(__dirname + '/public'));
 app.get('/interflip', function(req, res) {
 	
 	var message = inboundMessage(req.query);
-	message.save(), message.parse();
+	// message.save();
+	message.parse();
 
 	res.statusCode = 200, res.send("OK");
 });

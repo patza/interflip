@@ -15,6 +15,7 @@ exports.new = function(joke) {
 		text: encodeURIComponent(joke[3])
 	}
 
+	
 	if (excluded_fake_names.indexOf(joke.fake_name) < 0) {
 		Nexmo.send(joke.fake_name, contacts.find_by_name(joke.contact_name).phone, joke.text);
 	}
