@@ -23,6 +23,7 @@ exports.new = function(request) {
 	  });
 	}
 
+	
 	req = http.get("http://www.ratp.fr/horaires/fr/ratp/bus/prochains_passages/PP/B213/213_11_63/A", callback).end();
 
 }
