@@ -6,16 +6,12 @@ Nexmo = require('./nexmo.js');
 
 
 exports.new = function(request) {
-	console.log(request);
-
 	bus = request.text.split(' ');
 
 	bus = {
 		nb: bus[1],
 		station: bus[2]
 	}
-
-	console.log(bus)
 
 	if (bus.nb == "213" && bus.station == "noisy")
 		ratp = "http://www.ratp.fr/horaires/fr/ratp/bus/prochains_passages/PP/B213/213_21_54/R";
@@ -25,8 +21,6 @@ exports.new = function(request) {
 		ratp = "http://www.ratp.fr/horaires/fr/ratp/bus/prochains_passages/PP/B220/220_4/A";
 	else if (bus.nb == "220" && bus.station == "churchill")
 		ratp = "http://www.ratp.fr/horaires/fr/ratp/bus/prochains_passages/PP/B220/220_25_82/R";
-	
-
 
 	var str = "";
 	callback = function(response) {
