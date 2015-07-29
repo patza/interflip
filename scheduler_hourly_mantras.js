@@ -11,4 +11,4 @@ mantras[2] = "Je peux le faire, je peux rendre ce que je veux une réalité.";
 mantras[3] = "Fais quelque chose qui te fait peur. Reste inspiré."
 
 
-Nexmo.send("README", contacts.find_by_name("pa").phone), mantras.join(' / '));
+Nexmo.send("README", contacts.find_by_name("pa").phone, mantras.join(' / '));
