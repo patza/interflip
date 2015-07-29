@@ -12,7 +12,7 @@ fs.readFile('mantras_stay_positive/' + day + '.txt', 'utf8', function (err, data
   }
 
   Nexmo.send("LOVEYOU", contacts.find_by_name("pa").phone, data);
-  // Nexmo.send("LOVEYOU", contacts.find_by_name("coralie").phone, data);
+  Nexmo.send("LOVEYOU", contacts.find_by_name("coralie").phone, data);
 });
 
 
