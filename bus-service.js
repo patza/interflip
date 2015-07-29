@@ -6,7 +6,7 @@ Nexmo = require('./nexmo.js');
 
 
 exports.new = function(request) {
-	// console.log(request);
+	console.log(request);
 
 
 	bus_capture_regex = /BUS ([0-9]+) ([a-z]+)/;
