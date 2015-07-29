@@ -8,14 +8,14 @@ Nexmo = require('./nexmo.js');
 exports.new = function(request) {
 	console.log(request);
 
+	bus = request.text.split(' ');
 
-	bus_capture_regex = /BUS ([0-9]+) ([a-z]+)/;
-
-	bus = bus_capture_regex.exec(request.text);
 	bus = {
 		nb: bus[1],
 		station: bus[2]
 	}
+
+	console.log(bus)
 
 	if (bus.nb == "213" && bus.station == "noisy")
 		ratp = "http://www.ratp.fr/horaires/fr/ratp/bus/prochains_passages/PP/B213/213_21_54/R";
